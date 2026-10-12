@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detalle de moto | Moto Pinzón</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="moto-catalogo.js"></script>
+    <script defer src="tienda.js"></script>
+  </head>
+  <body data-page="product">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🏍️</span>
+        <span>
+          <strong>MOTO PINZÓN</strong>
+          <small>Tu próxima ruta empieza aquí</small>
+        </span>
+      </a>
+      <nav>
+        <a class="top-link" href="index.html">⌂ Menú principal</a>
+        <a class="top-link category-return" href="categorias-motos.html">← Volver a categorías</a>
+        <a class="top-link" href="carrito.html">
+          🛒 Compras <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <header class="page-heading">
+        <span class="eyebrow">Conoce cada detalle</span>
+        <h1>INFORMACIÓN DE LA MOTO</h1>
+      </header>
+
+      <div class="detail-layout">
+        <div>
+          <img class="gallery-main" id="detail-main-image" alt="Fotografía de la moto">
+          <div class="gallery-thumbs" id="gallery-thumbs"></div>
+        </div>
+
+        <article class="detail-copy">
+          <span class="eyebrow" id="detail-category"></span>
+          <h2 id="detail-name"></h2>
+          <div class="detail-price" id="detail-price"></div>
+
+          <p class="product-description" id="detail-description"></p>
+
+          <div class="quantity-row">
+            <strong>Cantidad</strong>
+            <div class="quantity">
+              <button type="button" data-quantity="-1" aria-label="Disminuir cantidad">−</button>
+              <output id="quantity-value">1</output>
+              <button type="button" data-quantity="1" aria-label="Aumentar cantidad">+</button>
+            </div>
+          </div>
+
+          <button class="button button-primary" id="add-to-cart" type="button">
+            🛒 Agregar al carrito
+          </button>
+          <p class="detail-note">
+            Precio de muestra. Confirma disponibilidad y características antes de comprar.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span data-year></span> Moto Pinzón · Precios de muestra</span>
+      <a href="categorias-motos.html">Volver a categorías</a>
+    </footer>
+  </body>
+</html>

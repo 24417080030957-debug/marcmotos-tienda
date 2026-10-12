@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pago de demostración | Moto Pinzón</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="moto-catalogo.js"></script>
+    <script defer src="tienda.js"></script>
+  </head>
+  <body data-page="payment">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🏍️</span>
+        <span>
+          <strong>MOTO PINZÓN</strong>
+          <small>Tu próxima ruta empieza aquí</small>
+        </span>
+      </a>
+      <nav>
+        <a class="top-link" href="index.html">⌂ Menú principal</a>
+        <a class="top-link" href="carrito.html">
+          🛒 Compras <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <header class="page-heading">
+        <h1>FORMA DE PAGO</h1>
+        <p>
+          La compra es una simulación. No ingreses datos de una tarjeta real.
+        </p>
+      </header>
+
+      <form class="form-panel" id="payment-form">
+        <h2>Tarjeta de demostración</h2>
+        <p id="payment-total"></p>
+
+        <div class="demo-warning">
+          ⚠️ Usa un número inventado. Esta plantilla no procesa pagos, no se
+          conecta a un banco y no almacena números de tarjeta.
+        </div>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="card-number">Número de tarjeta de prueba *</label>
+            <input
+              id="card-number"
+              inputmode="numeric"
+              autocomplete="off"
+              maxlength="19"
+              placeholder="0000 0000 0000 0000"
+              required
+            >
+          </div>
+          <div class="field">
+            <label for="card-holder">Nombre del titular *</label>
+            <input id="card-holder" autocomplete="off" required>
+          </div>
+          <div class="field">
+            <label for="card-expiry">Vencimiento (MM/AA) *</label>
+            <input
+              id="card-expiry"
+              inputmode="numeric"
+              autocomplete="off"
+              maxlength="5"
+              placeholder="MM/AA"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <a class="button button-light" href="carrito.html">
+            Cancelar compra
+          </a>
+          <button
+            class="button button-primary"
+            id="payment-submit"
+            type="submit"
+          >
+            💳 Desea pagar esta compra
+          </button>
+        </div>
+
+        <div class="form-footer" id="payment-confirm-controls" hidden>
+          <a class="button button-light" id="payment-cancel" href="carrito.html">
+            Cancelar
+          </a>
+          <button class="button button-danger" id="accept-payment" type="button">
+            Aceptar compra
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span data-year></span> Moto Pinzón · Pago simulado</span>
+      <a href="index.html">Volver al menú principal</a>
+    </footer>
+  </body>
+</html>

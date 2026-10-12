@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catálogo de motos | Moto Pinzón</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="moto-catalogo.js"></script>
+    <script defer src="tienda.js"></script>
+  </head>
+  <body data-page="listing" data-all-products="true">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🏍️</span>
+        <span><strong>MOTO PINZÓN</strong><small>Tu próxima ruta empieza aquí</small></span>
+      </a>
+      <nav>
+        <a class="top-link" href="index.html">⌂ Menú principal</a>
+        <a class="top-link" href="categorias-motos.html">Categorías</a>
+        <a class="top-link" href="carrito.html">🛒 Compras <span class="cart-count" data-cart-count>0</span></a>
+      </nav>
+    </header>
+    <main class="page-wrap">
+      <header class="page-heading">
+        <span class="eyebrow">Elige tu próxima ruta</span>
+        <h1 id="listing-title">Todas las motos</h1>
+        <p>Explora motos deportivas, urbanas y cruiser.</p>
+      </header>
+      <div class="category-tools">
+        <h2 id="listing-count">10 motos</h2>
+        <input class="search-input" id="product-search" type="search" placeholder="Buscar moto..." aria-label="Buscar moto">
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </main>
+    <footer class="site-footer">
+      <span>© <span data-year></span> Moto Pinzón · Precios de muestra</span>
+      <a href="categorias-motos.html">Volver a categorías</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1818 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171a18">
+  <title>Moto Pinzón | Motos para tu próxima ruta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+:root {
+  --ink:#0b0b0b;
+  --paper:#f9fafb;
+  --white:#fffefa;
+  --muted:#777b75;
+  --line:#ac0b0b;
+  --lime:#dc0505;
+  --red:#f0bf0b;
+  --green:#49785d;
+  --display:'Barlow Condensed',Impact,sans-serif;
+  --body:'DM Sans',sans-serif;
+  --shadow:0 18px 45px #1117131a
+}
+* {
+  box-sizing:border-box
+}
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body)
+}
+button,input {
+  font:inherit
+}
+button {
+  cursor:pointer
+}
+button:focus-visible,input:focus-visible {
+  outline:3px solid #a6c920;
+  outline-offset:3px
+}
+.topbar {
+  position:sticky;
+  z-index:10;
+  top:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:12px clamp(15px,5vw,76px);
+  background:#171a18f2;
+  color:white;
+  border-bottom:1px solid #ffffff20;
+  backdrop-filter:blur(12px)
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:0;
+  border:0;
+  background:none;
+  color:white;
+  text-align:left
+}
+.brand-mark {
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border:1px solid #d7f34a77;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 25%,#3e4840,#171a18 72%);
+  box-shadow:inset 0 0 13px #d7f34a19;
+  font-size:23px;
+  filter:drop-shadow(0 2px 4px #0008)
+}
+.brand-copy strong {
+  display:block;
+  font:800 19px/1 var(--display)
+}
+.brand-copy small {
+  color:#bfc5ba;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase
+}
+.top-actions {
+  display:flex;
+  gap:10px
+}
+.top-link {
+  padding:10px 14px;
+  border:1px solid #ffffff30;
+  border-radius:3px;
+  background:transparent;
+  color:white;
+  font-size:12px;
+  font-weight:700
+}
+.top-link:hover {
+  color:var(--lime);
+  border-color:var(--lime)
+}
+.cart-count {
+  display:inline-grid;
+  place-items:center;
+  min-width:19px;
+  height:19px;
+  margin-left:5px;
+  border-radius:50%;
+  background:var(--lime);
+  color:var(--ink);
+  font-size:10px
+}
+main {
+  min-height:calc(100vh - 68px)
+}
+.view {
+  display:none;
+  animation:rise .35s ease both
+}
+.view.active {
+  display:block
+}
+@keyframes rise {
+  from {
+    opacity:0;
+    transform:translateY(9px)
+  }
+  to {
+    opacity:1;
+    transform:translateY(0)
+  }
+  
+}
+.home-hero {
+  position:relative;
+  isolation:isolate;
+  min-height:min(690px,calc(100vh - 68px));
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  color:white;
+  background:#171a18
+}
+.home-hero:before {
+  content:'';
+  position:absolute;
+  z-index:-2;
+  inset:0;
+  background:linear-gradient(90deg,#121613 0%,#121613e8 27%,#12161373 57%,#12161338),url('IMG/M01.JPG') center 10%/cover
+}
+.home-hero:after {
+  content:'';
+  position:absolute;
+  z-index:-1;
+  inset:auto 0 0;
+  height:31%;
+  background:linear-gradient(transparent,#111512ba)
+}
+.hero-content {
+  width:min(1210px,100%);
+  margin:auto;
+  padding:65px clamp(22px,7vw,95px)
+}
+.eyebrow {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--lime);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2.5px;
+  text-transform:uppercase
+}
+.eyebrow:before {
+  content:'';
+  width:28px;
+  height:2px;
+  background:var(--lime)
+}
+h1,h2,h3,p {
+  margin-top:0
+}
+.hero-title {
+  max-width:690px;
+  margin:20px 0 16px;
+  font:900 clamp(62px,10.5vw,132px)/.79 var(--display);
+  text-transform:uppercase
+}
+.hero-title span {
+  display:block;
+  color:var(--lime)
+}
+.hero-subtitle {
+  max-width:430px;
+  margin-bottom:28px;
+  color:#d4d8cf;
+  font-size:15px;
+  line-height:1.7
+}
+.hero-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:11px
+}
+.button {
+  min-height:46px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:9px;
+  padding:0 18px;
+  border:1px solid transparent;
+  border-radius:3px;
+  font-size:12px;
+  font-weight:700;
+  transition:.18s
+}
+.button:hover {
+  transform:translateY(-2px)
+}
+.button-primary {
+  background:var(--lime);
+  color:var(--ink);
+  box-shadow:0 5px 0 #819b19
+}
+.button-primary:hover {
+  background:#e4ff64
+}
+.button-ghost {
+  border-color:#ffffff55;
+  background:#ffffff0e;
+  color:white
+}
+.button-ghost:hover {
+  border-color:var(--lime)
+}
+.button-dark {
+  background:var(--ink);
+  color:white
+}
+.button-light {
+  border-color:var(--line);
+  background:white;
+  color:var(--ink)
+}
+.button-danger {
+  background:var(--red);
+  color:white
+}
+.hero-stamp {
+  position:absolute;
+  right:clamp(22px,7vw,95px);
+  bottom:37px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:10px;
+  letter-spacing:1.6px;
+  text-transform:uppercase
+}
+.hero-stamp strong {
+  color:var(--lime);
+  font:800 36px var(--display)
+}
+.home-band {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--line);
+  border-bottom:1px solid var(--line)
+}
+.home-band-item {
+  min-height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:13px;
+  padding:15px;
+  background:var(--white)
+}
+.home-band-item .emoji {
+  font-size:25px;
+  filter:drop-shadow(1px 3px 1px #1115)
+}
+.home-band-item strong {
+  display:block;
+  font:700 18px var(--display);
+  text-transform:uppercase
+}
+.home-band-item small {
+  color:var(--muted);
+  font-size:11px
+}
+.page-wrap {
+  width:min(1160px,calc(100% - 40px));
+  margin:auto;
+  padding:40px 0 72px
+}
+.page-heading {
+  margin-bottom:26px;
+  text-align:center
+}
+.page-heading .eyebrow {
+  justify-content:center
+}
+.page-title {
+  margin:8px 0 5px;
+  font:800 clamp(37px,6vw,62px)/.95 var(--display);
+  text-transform:uppercase
+}
+.page-intro {
+  max-width:590px;
+  margin:8px auto 0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6
+}
+.info-layout {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px
+}
+.info-panel {
+  padding:28px;
+  border:1px solid var(--line);
+  background:var(--white)
+}
+.info-panel h2 {
+  font:700 29px var(--display);
+  text-transform:uppercase
+}
+.info-panel p {
+  color:#555b54;
+  font-size:13px;
+  line-height:1.8
+}
+.map-panel {
+  min-height:310px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid #c9cec2;
+  background:#dce5d3
+}
+.map-panel:before {
+  content:'';
+  position:absolute;
+  inset:-20%;
+  opacity:.7;
+  transform:rotate(-13deg);
+  background:repeating-linear-gradient(0deg,transparent 0 43px,#fffefa 44px 51px,transparent 52px 97px),repeating-linear-gradient(90deg,transparent 0 71px,#f8f5e8 72px 78px,transparent 79px 143px)
+}
+.map-panel:after {
+  content:'';
+  position:absolute;
+  width:170%;
+  height:13px;
+  left:-25%;
+  top:49%;
+  background:#c0d8d9;
+  border:2px solid white;
+  transform:rotate(24deg);
+  box-shadow:0 0 0 3px #c0d8d9
+}
+.map-label {
+  position:absolute;
+  z-index:1;
+  top:20px;
+  left:20px;
+  padding:8px 11px;
+  background:white;
+  font-size:11px;
+  font-weight:700;
+  box-shadow:var(--shadow)
+}
+.map-pin {
+  position:absolute;
+  z-index:2;
+  top:48%;
+  left:54%;
+  width:50px;
+  height:50px;
+  display:grid;
+  place-items:center;
+  border:3px solid white;
+  border-radius:50% 50% 50% 6px;
+  background:var(--red);
+  font-size:23px;
+  transform:rotate(-45deg);
+  box-shadow:0 7px 13px #15211755
+}
+.map-pin span {
+  transform:rotate(45deg)
+}
+.category-layout {
+  display:grid;
+  grid-template-columns:285px 1fr;
+  gap:25px;
+  align-items:start
+}
+.category-list {
+  display:grid;
+  gap:7px
+}
+.category-option {
+  min-height:49px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 13px;
+  border:1px solid var(--line);
+  background:var(--white);
+  text-align:left;
+  font:700 17px var(--display)
+}
+.category-option:hover,.category-option.selected {
+  border-color:var(--ink);
+  background:var(--ink);
+  color:var(--lime)
+}
+.category-option span:last-child {
+  color:var(--muted);
+  font:600 10px var(--body)
+}
+.category-option:hover span:last-child,.category-option.selected span:last-child {
+  color:#bdc2b9
+}
+.category-showcase {
+  min-height:355px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  padding:25px;
+  background:var(--ink);
+  color:white
+}
+.category-showcase img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.57
+}
+.category-showcase img.show-full-image {
+  object-fit:fill
+}
+.category-showcase:after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,#111512ed,transparent 83%)
+}
+.category-showcase>*:not(img) {
+  position:relative;
+  z-index:1
+}
+.category-showcase h2 {
+  margin:0 0 4px;
+  font:800 44px/.95 var(--display);
+  text-transform:uppercase
+}
+.category-showcase p {
+  margin-bottom:15px;
+  color:#d7dbd2;
+  font-size:12px
+}
+.category-tools {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:18px 0 13px
+}
+.category-tools h2 {
+  margin:0;
+  font:700 25px var(--display);
+  text-transform:uppercase
+}
+.search-input {
+  width:min(100%,260px);
+  min-height:39px;
+  padding:0 12px;
+  border:1px solid var(--line);
+  background:white;
+  font-size:12px
+}
+.product-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px
+}
+.product-card {
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:var(--white);
+  transition:transform .2s,box-shadow .2s
+}
+.product-open {
+  display:block;
+  width:100%;
+  padding:0;
+  border:0;
+  background:none;
+  color:inherit;
+  text-align:left
+}
+.product-card:hover {
+  transform:translateY(-3px);
+  box-shadow:var(--shadow)
+}
+.product-image {
+  width:100%;
+  aspect-ratio:1;
+  display:block;
+  object-fit:contain;
+  background:#fffefa
+}
+.product-copy {
+  padding:13px
+}
+.product-copy small {
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:1px;
+  text-transform:uppercase
+}
+.product-copy h3 {
+  min-height:23px;
+  margin:4px 0 8px;
+  font:700 21px var(--display);
+  text-transform:uppercase
+}
+.product-foot {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px
+}
+.price {
+  font-size:13px;
+  font-weight:700
+}
+.detail-layout {
+  display:grid;
+  grid-template-columns:1.25fr .85fr;
+  gap:27px;
+  align-items:start
+}
+.gallery-main {
+  width:min(100%,420px);
+  height:min(100vw,420px);
+  margin-inline:auto;
+  aspect-ratio:1;
+  display:block;
+  object-fit:contain;
+  background:#fffefa
+}
+.gallery-thumbs {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  margin-top:8px
+}
+.gallery-thumb {
+  width:100%;
+  aspect-ratio:1;
+  padding:0;
+  overflow:hidden;
+  border:2px solid transparent;
+  background:white
+}
+.gallery-thumb.active {
+  border-color:#a6c920
+}
+.gallery-thumb img {
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+  background:#fffefa
+}
+.detail-copy {
+  padding:23px;
+  border:1px solid var(--line);
+  background:white
+}
+.detail-copy h2 {
+  margin:7px 0 0;
+  font:800 42px/.95 var(--display);
+  text-transform:uppercase
+}
+.detail-price {
+  margin:12px 0 18px;
+  color:var(--green);
+  font-size:23px;
+  font-weight:700
+}
+.spec-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  border:1px solid var(--line);
+  background:var(--line)
+}
+.spec {
+  min-height:57px;
+  padding:10px;
+  background:#fbfbf7
+}
+.spec small {
+  display:block;
+  margin-bottom:3px;
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:1px;
+  text-transform:uppercase
+}
+.spec strong {
+  font-size:12px
+}
+.quantity-row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:21px 0 15px
+}
+.quantity-row strong {
+  font-size:12px
+}
+.quantity {
+  display:inline-flex;
+  align-items:center;
+  border:1px solid var(--line)
+}
+.quantity button {
+  width:39px;
+  height:38px;
+  border:0;
+  background:white;
+  font-size:20px
+}
+.quantity output {
+  min-width:35px;
+  text-align:center;
+  font-size:13px;
+  font-weight:700
+}
+.detail-copy>.button {
+  width:100%
+}
+.detail-note {
+  margin:11px 0 0;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.6;
+  text-align:center
+}
+.product-description {
+  margin:12px 0;
+  color:#515750;
+  font-size:13px;
+  line-height:1.6
+}
+.cart-empty {
+  padding:55px 18px;
+  border:1px dashed #b9beb5;
+  background:white;
+  text-align:center
+}
+.cart-empty .emoji,.confirmation .emoji {
+  font-size:48px;
+  filter:drop-shadow(2px 4px 1px #1113)
+}
+.cart-empty h2 {
+  margin:10px 0 5px;
+  font:700 29px var(--display);
+  text-transform:uppercase
+}
+.cart-empty p {
+  color:var(--muted);
+  font-size:12px
+}
+.cart-table {
+  display:grid;
+  gap:9px
+}
+.cart-item {
+  display:grid;
+  grid-template-columns:30px 118px 1fr auto auto;
+  align-items:center;
+  gap:14px;
+  padding:12px;
+  border:1px solid var(--line);
+  background:white
+}
+.select-circle {
+  appearance:none;
+  width:20px;
+  height:20px;
+  margin:0;
+  border:1.5px solid #9da39a;
+  border-radius:50%;
+  display:grid;
+  place-content:center;
+  cursor:pointer
+}
+.select-circle:checked {
+  border-color:var(--green);
+  background:var(--green)
+}
+.select-circle:checked:before {
+  content:'✓';
+  color:white;
+  font-size:13px;
+  font-weight:700
+}
+.cart-item img {
+  width:118px;
+  aspect-ratio:1;
+  object-fit:contain;
+  background:#fffefa
+}
+.cart-item h3 {
+  margin:0 0 4px;
+  font:700 21px var(--display);
+  text-transform:uppercase
+}
+.cart-item p {
+  margin:0;
+  color:var(--muted);
+  font-size:10px
+}
+.cart-item-price {
+  white-space:nowrap;
+  font-size:12px;
+  font-weight:700
+}
+.remove-button {
+  padding:8px;
+  border:0;
+  background:transparent;
+  color:var(--red);
+  font-size:11px;
+  font-weight:700
+}
+.cart-summary {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-top:18px;
+  padding:17px 20px;
+  background:var(--ink);
+  color:white
+}
+.cart-summary small {
+  display:block;
+  color:#bec4ba;
+  font-size:10px
+}
+.cart-summary strong {
+  font-size:21px
+}
+.cart-actions {
+  display:flex;
+  justify-content:end;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:12px
+}
+.form-panel {
+  max-width:780px;
+  margin:auto;
+  padding:clamp(20px,5vw,36px);
+  border:1px solid var(--line);
+  background:white
+}
+.form-panel h2 {
+  margin-bottom:5px;
+  font:700 30px var(--display);
+  text-transform:uppercase
+}
+.form-panel>p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6
+}
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+  margin-top:18px
+}
+.field {
+  display:grid;
+  gap:5px
+}
+.field.full {
+  grid-column:1/-1
+}
+.field label {
+  font-size:10px;
+  font-weight:700
+}
+.field input {
+  width:100%;
+  min-height:42px;
+  padding:0 11px;
+  border:1px solid var(--line);
+  background:#fffefa;
+  font-size:12px
+}
+.form-footer {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:20px
+}
+.form-footer small {
+  color:var(--muted);
+  font-size:10px
+}
+.demo-warning {
+  display:flex;
+  gap:9px;
+  margin:16px 0;
+  padding:12px;
+  background:#fff8dd;
+  color:#65541c;
+  font-size:11px;
+  line-height:1.55
+}
+.payment-card {
+  max-width:390px;
+  min-height:200px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  margin:17px 0;
+  padding:21px;
+  border-radius:9px;
+  background:linear-gradient(135deg,#333e37,#111713 75%);
+  color:white;
+  box-shadow:0 12px 22px #12161333
+}
+.payment-card-top {
+  display:flex;
+  justify-content:space-between;
+  color:var(--lime);
+  font:700 17px var(--display)
+}
+.payment-card-number {
+  font:600 20px var(--display);
+  letter-spacing:2px
+}
+.payment-card-bottom {
+  display:flex;
+  justify-content:space-between;
+  color:#e1e5dd;
+  font-size:10px;
+  text-transform:uppercase
+}
+.confirmation {
+  max-width:600px;
+  margin:auto;
+  padding:42px 25px;
+  border:1px solid var(--line);
+  background:white;
+  text-align:center
+}
+.confirmation h2 {
+  margin:12px 0 7px;
+  font:800 38px var(--display);
+  text-transform:uppercase
+}
+.confirmation p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7
+}
+.support-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px
+}
+.support-card {
+  padding:21px;
+  border:1px solid var(--line);
+  background:white
+}
+.support-card .profile-image {
+  display:block;
+  width:200px;
+  height:200px;
+  border-radius:0;
+  object-fit:cover
+}
+.support-card h2 {
+  margin:8px 0;
+  font:700 25px var(--display);
+  text-transform:uppercase
+}
+.support-card p {
+  margin:5px 0;
+  color:#515750;
+  font-size:12px;
+  line-height:1.55
+}
+.toast {
+  position:fixed;
+  z-index:30;
+  right:20px;
+  bottom:20px;
+  max-width:calc(100% - 40px);
+  padding:13px 17px;
+  border-left:4px solid var(--lime);
+  background:var(--ink);
+  color:white;
+  box-shadow:var(--shadow);
+  font-size:12px;
+  animation:rise .2s ease both
+}
+.site-footer {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:19px clamp(18px,5vw,76px);
+  border-top:1px solid var(--line);
+  background:#eaeae2;
+  color:var(--muted);
+  font-size:10px
+}
+
+@media(max-width:760px) {
+  .topbar {
+    padding:10px 15px
+  }
+  .brand-copy strong {
+    font-size:16px
+  }
+  .top-link {
+    padding:9px 10px;
+    font-size:10px
+  }
+  .top-link.home-only {
+    font-size:0
+  }
+  .top-link.home-only:before {
+    content:'⌂';
+    font-size:19px
+  }
+  .home-hero {
+    min-height:620px
+  }
+  .home-hero:before {
+    background-position:60% center
+  }
+  .hero-content {
+    padding:60px 25px 90px
+  }
+  .hero-title {
+    font-size:clamp(61px,16vw,100px)
+  }
+  .hero-stamp {
+    bottom:18px;
+    right:22px
+  }
+  .home-band-item {
+    justify-content:start;
+    padding-left:12px
+  }
+  .home-band-item strong {
+    font-size:15px
+  }
+  .home-band-item small {
+    font-size:9px
+  }
+  .page-wrap {
+    width:min(100% - 28px,1160px);
+    padding-top:28px
+  }
+  .info-layout,.detail-layout {
+    grid-template-columns:1fr
+  }
+  .category-layout {
+    grid-template-columns:1fr
+  }
+  .category-list {
+    grid-template-columns:1fr 1fr
+  }
+  .category-option {
+    min-height:45px;
+    font-size:15px
+  }
+  .category-showcase {
+    min-height:260px
+  }
+  .product-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px
+  }
+  .product-copy {
+    padding:10px
+  }
+  .product-copy h3 {
+    font-size:18px
+  }
+  .product-foot {
+    align-items:start;
+    flex-direction:column
+  }
+  .cart-item {
+    grid-template-columns:24px 78px 1fr auto;
+    gap:9px
+  }
+  .cart-item img {
+    width:78px
+  }
+  .cart-item h3 {
+    font-size:17px
+  }
+  .cart-item-price {
+    grid-column:3
+  }
+  .remove-button {
+    grid-column:4;
+    grid-row:2
+  }
+  .cart-summary {
+    align-items:start;
+    flex-direction:column
+  }
+  .form-grid {
+    grid-template-columns:1fr
+  }
+  .field.full {
+    grid-column:auto
+  }
+  .support-grid {
+    grid-template-columns:1fr
+  }
+  
+}
+
+@media(max-width:410px) {
+  .brand-mark {
+    width:37px;
+    height:37px;
+    font-size:20px
+  }
+  .brand-copy small {
+    letter-spacing:1px
+  }
+  .top-actions {
+    gap:5px
+  }
+  .top-link {
+    padding:8px
+  }
+  .cart-count {
+    min-width:16px;
+    height:16px
+  }
+  .home-band-item {
+    flex-direction:column;
+    align-items:start;
+    gap:4px
+  }
+  .category-list {
+    grid-template-columns:1fr
+  }
+  .category-option {
+    min-height:41px
+  }
+  .category-tools {
+    align-items:stretch;
+    flex-direction:column
+  }
+  .search-input {
+    width:100%
+  }
+  .cart-item {
+    grid-template-columns:20px 64px 1fr auto;
+    padding:8px
+  }
+  .cart-item img {
+    width:64px
+  }
+  
+}
+
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="brand" onclick="showView('home')" aria-label="Volver al menú principal">
+      <span class="brand-mark">🏍️</span>
+      <span class="brand-copy">
+        <strong>MOTO PINZÓN</strong>
+        <small>Tu próxima ruta empieza aquí</small>
+      </span>
+    </button>
+    <nav class="top-actions" aria-label="Navegación principal">
+      <button class="top-link home-only" onclick="showView('home')">⌂ Menú principal</button>
+      <button class="top-link home-route-link" aria-label="Información y ubicación" onclick="showView('info')">📍 Información</button>
+      <button class="top-link home-route-link" aria-label="Atención a cliente" onclick="showView('support')">☎️ Atención</button>
+      <button class="top-link" onclick="showView('cart')">
+        🛒 Compras <span class="cart-count" id="header-count">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="view active" id="view-home">
+      <div class="home-hero">
+        <div class="hero-content">
+          <div class="eyebrow">Encuentra tu próxima aventura</div>
+          <h1 class="hero-title">MOTOS PARA <span>CADA RUTA</span></h1>
+          <p class="hero-subtitle">
+            Descubre motos deportivas, urbanas y cruiser listas para acompañarte en el camino.
+          </p>
+          <div class="hero-actions">
+            <button class="button button-primary" onclick="showView('categories')">
+               Explorar categorías
+            </button>
+            <button class="button button-ghost" onclick="location.href='catalogo-motos.html'">
+              Ver todas las motos
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-info">
+      <div class="page-wrap">
+        <div class="page-heading">
+          <div class="eyebrow">Conócenos</div>
+          <h1 class="page-title">Información y ubicación</h1>
+          <p class="page-intro">
+            Encuentra la moto ideal para tu día a día y para la próxima aventura.
+          </p>
+        </div>
+        <div class="info-layout">
+          <article class="info-panel">
+            <h2>Sobre Nuestra Tienda</h2>
+            <p id="store-description"></p>
+            <p><strong>Horario:</strong> <span id="store-hours"></span></p>
+            <p><strong>Dirección:</strong> <span id="store-address"></span></p>
+            <p><strong>Teléfono:</strong> <span id="store-phone"></span></p>
+            <button class="button button-dark" onclick="showView('categories')">
+              🏍️ Ver categorías
+            </button>
+          </article>
+          <div
+            class="map-panel"
+            role="img"
+            aria-label="Mapa ilustrativo con ubicación ficticia"
+          >
+            <div class="map-label" id="map-label"></div>
+            <div class="map-pin"><span>🏍️</span></div>
+          </div>
+        </div>
+        <p class="page-intro" style="margin-top: 13px">
+      
+        </p>
+      </div>
+    </section>
+
+    <section class="view" id="view-categories">
+      <div class="page-wrap">
+        <div class="page-heading">
+          <div class="eyebrow">Explora tu estilo</div>
+          <h1 class="page-title">Categorías de motos</h1>
+          <p class="page-intro">
+            Elige una categoría para descubrir las motos disponibles.
+          </p>
+        </div>
+        <div class="category-layout">
+          <div class="category-list" id="category-list"></div>
+          <article class="category-showcase">
+            <img id="category-cover" alt="Moto de la categoría seleccionada">
+            <div class="eyebrow">Encuentra tu próxima ruta</div>
+            <h2 id="category-feature-title">Elige tu categoría</h2>
+            <p id="category-feature-copy">Elige una categoría para ver las motos disponibles.</p>
+            <button class="button button-primary" onclick="openSelectedCategory()">
+              Ver motos →
+            </button>
+          </article>
+        </div>
+        <div id="category-data" hidden>
+          <span data-category="Motos deportivas" data-emoji="🏁"
+            data-href="catalogo-motos.html?categoria=Motos%20deportivas"
+            data-description="Diseño deportivo y potencia para disfrutar cada curva."></span>
+          <span data-category="Motos urbanas" data-emoji="🏙️"
+            data-href="catalogo-motos.html?categoria=Motos%20urbanas"
+            data-description="Prácticas y versátiles para moverte todos los días."></span>
+          <span data-category="Motos cruiser" data-emoji="🛣️"
+            data-href="catalogo-motos.html?categoria=Motos%20cruiser"
+            data-description="Estilo clásico y comodidad para recorrer nuevos caminos."></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-listing">
+      <div class="page-wrap">
+        <div class="page-heading">
+          <div class="eyebrow">Motos disponibles</div>
+          <h1 class="page-title" id="listing-title">Motos</h1>
+          <p class="page-intro">
+            Selecciona una moto para consultar sus detalles y fotografías.
+          </p>
+        </div>
+        <div class="category-tools">
+          <h2 id="listing-count"></h2>
+          <input
+            class="search-input"
+            type="search"
+            id="product-search"
+            placeholder="Buscar moto..."
+            aria-label="Buscar moto"
+          >
+        </div>
+        <div class="product-grid" id="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-detail">
+      <div class="page-wrap">
+        <div class="page-heading">
+          <div class="eyebrow">Conoce cada detalle</div>
+          <h1 class="page-title">Información de la moto</h1>
+        </div>
+        <div class="detail-layout">
+          <div>
+            <img class="gallery-main" id="detail-main-image" alt="Fotografía de la moto">
+            <div class="gallery-thumbs" id="gallery-thumbs"></div>
+          </div>
+          <article class="detail-copy">
+            <div class="eyebrow" id="detail-category"></div>
+            <h2 id="detail-name"></h2>
+            <div class="detail-price" id="detail-price"></div>
+            <p class="product-description" id="detail-description"></p>
+            <div class="quantity-row">
+              <strong>Cantidad</strong>
+              <div class="quantity">
+                <button onclick="changeQuantity(-1)" aria-label="Disminuir cantidad">−</button>
+                <output id="quantity-value">1</output>
+                <button onclick="changeQuantity(1)" aria-label="Aumentar cantidad">+</button>
+              </div>
+            </div>
+            <button class="button button-primary" onclick="addToCart()">
+              🛒 Agregar al carrito
+            </button>
+            <p class="detail-note">
+              Precio de muestra. Confirma disponibilidad y características antes de comprar.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-cart">
+      <div class="page-wrap">
+        <div class="page-heading">
+          <div class="eyebrow">Tus motos seleccionadas</div>
+          <h1 class="page-title">Carrito de compras</h1>
+          <p class="page-intro">Selecciona una o varias compras para continuar.</p>
+        </div>
+        <div id="cart-content"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-checkout">
+      <div class="page-wrap">
+        <div class="page-heading">
+          <div class="eyebrow">Paso 1 de 2</div>
+          <h1 class="page-title">Datos de entrega</h1>
+          <p class="page-intro">Completa todos los campos para continuar con tu compra.</p>
+        </div>
+        <form class="form-panel" id="delivery-form">
+          <h2>¿A dónde lo enviamos?</h2>
+          <p>
+            Estos datos solo se usan en esta demostración y no se envían a ningún servidor.
+          </p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="country">País *</label>
+              <input id="country" autocomplete="country-name" required>
+            </div>
+            <div class="field">
+              <label for="full-name">Nombre y apellidos *</label>
+              <input id="full-name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="postal">Código postal *</label>
+              <input id="postal" autocomplete="postal-code" required>
+            </div>
+            <div class="field">
+              <label for="state">Estado *</label>
+              <input id="state" autocomplete="address-level1" required>
+            </div>
+            <div class="field">
+              <label for="municipality">Municipio *</label>
+              <input id="municipality" autocomplete="address-level2" required>
+            </div>
+            <div class="field">
+              <label for="neighborhood">Colonia *</label>
+              <input id="neighborhood" required>
+            </div>
+            <div class="field">
+              <label for="street">Nombre de la calle *</label>
+              <input id="street" autocomplete="street-address" required>
+            </div>
+            <div class="field">
+              <label for="street-number">Número de la calle *</label>
+              <input id="street-number" required>
+            </div>
+            <div class="field">
+              <label for="phone">Número de teléfono *</label>
+              <input id="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="email">Correo electrónico *</label>
+              <input id="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="form-footer">
+            <small>* Todos los campos son obligatorios.</small>
+            <button
+              class="button button-primary"
+              id="save-delivery"
+              type="submit"
+              disabled
+            >
+              Guardar y continuar →
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="view" id="view-payment">
+      <div class="page-wrap">
+        <div class="page-heading">
+          <div class="eyebrow">Paso 2 de 2</div>
+          <h1 class="page-title">Forma de pago</h1>
+          <p class="page-intro">
+            La compra es una simulación. No ingreses datos de una tarjeta real.
+          </p>
+        </div>
+        <form class="form-panel" id="payment-form">
+          <h2>Tarjeta de demostración</h2>
+          <p id="payment-total"></p>
+          <div class="payment-card">
+            <div class="payment-card-top">
+              <span>MOTO PINZÓN</span>
+              <span>▰</span>
+            </div>
+            <div class="payment-card-number" id="card-preview">•••• •••• •••• ••••</div>
+            <div class="payment-card-bottom">
+              <span id="card-name-preview">NOMBRE DEL TITULAR</span>
+              <span>DEMO</span>
+            </div>
+          </div>
+          <div class="demo-warning">
+            ⚠️
+            <span>
+              Usa cualquier número de prueba inventado. Esta plantilla no procesa
+              pagos, no se conecta a un banco y no almacena números de tarjeta.
+            </span>
+          </div>
+          <div class="form-grid">
+            <div class="field full">
+              <label for="card-number">Número de tarjeta de prueba *</label>
+              <input
+                id="card-number"
+                inputmode="numeric"
+                maxlength="19"
+                placeholder="0000 0000 0000 0000"
+                required
+              >
+            </div>
+            <div class="field">
+              <label for="card-holder">Nombre del titular *</label>
+              <input id="card-holder" required>
+            </div>
+            <div class="field">
+              <label for="card-expiry">Vencimiento (MM/AA) *</label>
+              <input
+                id="card-expiry"
+                inputmode="numeric"
+                maxlength="5"
+                placeholder="MM/AA"
+                required
+              >
+            </div>
+          </div>
+          <div class="form-footer">
+            <button class="button button-light" type="button" onclick="returnToCart()">
+              Cancelar compra
+            </button>
+            <button class="button button-primary" id="payment-submit" type="submit">
+              💳 Desea pagar esta compra
+            </button>
+          </div>
+          <div class="form-footer" id="payment-confirm-controls" hidden>
+            <button class="button button-light" type="button" onclick="returnToCart()">
+              Cancelar
+            </button>
+            <button class="button button-danger" type="button" onclick="completePurchase()">
+              Aceptar compra
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="view" id="view-confirm">
+      <div class="page-wrap">
+        <div class="confirmation">
+          <div class="emoji">🎉</div>
+          <h2>¡Compra realizada!</h2>
+          <p>
+            Tu pedido de demostración se registró correctamente. No se realizó
+            ningún cargo ni se enviaron tus datos.
+          </p>
+          <button class="button button-primary" onclick="showView('home')">
+            🏠 Volver al menú principal
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-support">
+      <div class="page-wrap">
+        <div class="page-heading">
+          <div class="eyebrow">Estamos para ayudarte</div>
+          <h1 class="page-title">Atención a cliente</h1>
+          <p class="page-intro">
+            Tu confianza es lo mas importante, Escribenos te contestamos al momento
+          </p>
+        </div>
+        <div class="support-grid" id="support-grid"></div>
+      </div>
+    </section>
+  </main>
+<div id="toast-region" aria-live="polite"></div>
+<script src="moto-catalogo.js"></script>
+<script>
+const STORE = {
+  description:
+    'Somos una tienda dedicada a ayudarte a encontrar la moto ideal para tu estilo de vida. Explora modelos deportivos, urbanos y cruiser para elegir tu próxima ruta.',
+  address: 'calle Zihuatanejo s/n col.capiri Emiliano Zapata Morelos.',
+  mapLabel: 'calle zihuatanejo emilino zapata. morelos.',
+  phone: '777 332 78 21',
+  hours: 'Miercoles de 7:30am a 1:30pm.',
+  contacts: [
+    {
+      name: 'Sandra Zamora Martinez',
+      role: 'Asesora de ventas.',
+      phone: '777 332 78 21',
+      email: 'sandra384zamventas@gmail.com',
+      address: 'calle Zihuatanejo s/n col.capiri Emiliano Zapata Morelos.'
+    },
+    {
+      name: 'Alejandro Luciano Zamora',
+      role: 'Asesor de ventas.',
+      phone: '770 10 79 027',
+      email: 'alex32luciano44@gmail.com',
+      address: 'calle Zihuatanejo s/n col.capiri Emiliano Zapata Morelos.'
+    }
+  ]
+};
+const CATEGORIES = [...document.querySelectorAll('#category-data [data-category]')]
+  .map(item => window.MOTORCYCLE_CATALOG.configureCategory({
+    name: item.dataset.category,
+    emoji: item.dataset.emoji,
+    description: item.dataset.description,
+    image: item.dataset.image,
+    href: item.dataset.href
+  }));
+const PRODUCTS = window.MOTORCYCLE_CATALOG.createProducts(CATEGORIES);
+const CART_KEY = 'ruta-motor-cart-v3';
+const CHECKOUT_KEY = 'ruta-motor-checkout-v3';
+const cartLineKey = item => item.id;
+let cart = getCart();
+let selectedCategory = CATEGORIES[0].name;
+let currentProduct = null;
+let detailQuantity = 1;
+let selectedCartIds = new Set();
+let checkoutIds = [];
+
+function money(value) {
+  return new Intl.NumberFormat('es-MX', {
+    style: 'currency',
+    currency: 'MXN',
+    maximumFractionDigits: 0
+  }).format(value);
+}
+
+function getCart() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+    return Array.isArray(saved)
+      ? saved
+          .filter(item =>
+            item &&
+            PRODUCTS.some(product => product.id === item.id) &&
+            Number.isInteger(item.quantity) &&
+            item.quantity > 0
+          )
+          .map(item => ({ id: item.id, quantity: item.quantity }))
+      : [];
+  } catch (error) {
+    console.error('No se pudo leer el carrito guardado.', error);
+    return [];
+  }
+}
+
+function saveCart() {
+  try {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  } catch {
+    showToast('No se pudo guardar el carrito en este navegador.');
+  }
+  updateCartCount();
+}
+
+function updateCartCount() {
+  document.getElementById('header-count').textContent = cart.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
+}
+
+function showToast(message) {
+  const region = document.getElementById('toast-region');
+  region.innerHTML = `<div class="toast" role="status">${message}</div>`;
+  setTimeout(() => {
+    region.replaceChildren();
+  }, 2600);
+}
+
+function showView(name) {
+  document.querySelectorAll('.view').forEach(view => {
+    view.classList.toggle('active', view.id === `view-${name}`);
+  });
+  if (name === 'cart') renderCart();
+  if (name === 'info') renderStoreInfo();
+  if (name === 'categories') renderCategories();
+  if (name === 'support') renderSupport();
+  if (name === 'checkout') updateDeliveryButton();
+  window.scrollTo(0, 0);
+}
+
+function renderStoreInfo() {
+  document.getElementById('store-description').textContent = STORE.description;
+  document.getElementById('store-hours').textContent = STORE.hours;
+  document.getElementById('store-address').textContent = STORE.address;
+  document.getElementById('store-phone').textContent = STORE.phone;
+  document.getElementById('map-label').textContent = STORE.mapLabel;
+}
+
+function renderCategories() {
+  const list = document.getElementById('category-list');
+  list.innerHTML = CATEGORIES.map((category, index) =>
+    `<button class="category-option${category.name === selectedCategory ? ' selected' : ''}" ` +
+    `type="button" onclick="selectCategory(${index})">` +
+    `<span>${category.emoji} ${category.name}</span><span>${category.productCount} motos</span></button>`
+  ).join('');
+  const category = CATEGORIES.find(item => item.name === selectedCategory);
+  document.getElementById('category-feature-title').textContent = category.name;
+  document.getElementById('category-feature-copy').textContent =
+    `${category.productCount} motos disponibles. ${category.description}`;
+  const cover = document.getElementById('category-cover');
+  cover.src = category.image;
+  cover.classList.toggle('show-full-image', category.backgroundFit === 'contain');
+}
+
+function selectCategory(index) {
+  selectedCategory = CATEGORIES[index].name;
+  renderCategories();
+}
+
+function openSelectedCategory() {
+  const category = CATEGORIES.find(item => item.name === selectedCategory);
+  if (!category) {
+    throw new Error(`No se encontró la categoría "${selectedCategory}".`);
+  }
+  location.href = category.href;
+}
+
+function renderProducts(products) {
+  document.getElementById('product-grid').innerHTML = products.length
+    ? products.map(product =>
+        `<article class="product-card">` +
+        `<button class="product-open" type="button" onclick="openProduct('${product.id}')">` +
+        `<img class="product-image" src="${product.image}" alt="${product.name}" loading="lazy">` +
+        `<div class="product-copy"><small>${product.category}</small>` +
+        `<h3>${product.name}</h3><div class="product-foot">` +
+        `<span class="price">${money(product.price)}</span>` +
+        `<span class="button button-dark">Ver moto →</span></div></div></button></article>`
+      ).join('')
+    : '<p>No encontramos motos con esa búsqueda.</p>';
+}
+
+function openProduct(id) {
+  currentProduct = PRODUCTS.find(product => product.id === id);
+  if (!currentProduct) return;
+  detailQuantity = 1;
+  document.getElementById('detail-category').textContent = currentProduct.category;
+  document.getElementById('detail-name').textContent = currentProduct.name;
+  document.getElementById('detail-price').textContent = money(currentProduct.price);
+  document.getElementById('detail-description').textContent = currentProduct.description;
+  document.getElementById('quantity-value').textContent = detailQuantity;
+  document.getElementById('detail-main-image').src = currentProduct.detailImages[0];
+  document.getElementById('gallery-thumbs').innerHTML =
+    currentProduct.detailImages.map((src, index) =>
+      `<button class="gallery-thumb${index === 0 ? ' active' : ''}" ` +
+      `type="button" onclick="changeDetailImage(${index})" aria-label="Ver imagen ${index + 1}">` +
+      `<img src="${src}" alt="Fotografía ${index + 1}" loading="lazy"></button>`
+    ).join('');
+  showView('detail');
+}
+
+function changeDetailImage(index) {
+  document.getElementById('detail-main-image').src = currentProduct.detailImages[index];
+  document.querySelectorAll('.gallery-thumb').forEach((thumb, thumbIndex) => {
+    thumb.classList.toggle('active', thumbIndex === index);
+  });
+}
+
+function changeQuantity(change) {
+  detailQuantity = Math.max(1, Math.min(20, detailQuantity + change));
+  document.getElementById('quantity-value').textContent = detailQuantity;
+}
+
+function addToCart() {
+  const item = cart.find(entry => entry.id === currentProduct.id);
+  if (item) item.quantity += detailQuantity;
+  else cart.push({ id: currentProduct.id, quantity: detailQuantity });
+  saveCart();
+  showToast(`${detailQuantity === 1 ? 'Moto agregada' : 'Motos agregadas'} a Compras`);
+}
+
+function renderCart() {
+  const host = document.getElementById('cart-content');
+  cart = getCart();
+  selectedCartIds = new Set(
+    [...selectedCartIds].filter(key => cart.some(item => cartLineKey(item) === key))
+  );
+  if (!cart.length) {
+    host.innerHTML =
+      '<div class="cart-empty"><div class="emoji">🛒</div>' +
+      '<h2>Tu carrito está esperando</h2>' +
+      '<p>Explora las categorías y agrega las motos que te interesan.</p>' +
+      '<button class="button button-primary" onclick="showCategories()">Explorar motos</button></div>';
+    return;
+  }
+  const total = cart
+    .filter(item => selectedCartIds.has(cartLineKey(item)))
+    .reduce((sum, item) =>
+      sum + PRODUCTS.find(product => product.id === item.id).price * item.quantity, 0
+    );
+  host.innerHTML =
+    `<div class="cart-table">${cart.map(item => {
+      const product = PRODUCTS.find(entry => entry.id === item.id);
+      const lineKey = cartLineKey(item);
+      return `<article class="cart-item">` +
+        `<input class="select-circle" type="checkbox" data-select="${lineKey}" ` +
+        `aria-label="Seleccionar ${product.name}" ${selectedCartIds.has(lineKey) ? 'checked' : ''}>` +
+        `<img src="${product.image}" alt="${product.name}" loading="lazy">` +
+        `<div><h3>${product.name}</h3>` +
+        `<p>${product.category} · ${item.quantity} ${item.quantity === 1 ? 'unidad' : 'unidades'}</p></div>` +
+        `<span class="cart-item-price">${money(product.price * item.quantity)}</span>` +
+        `<button class="remove-button" type="button" data-remove="${lineKey}">Eliminar</button></article>`;
+    }).join('')}</div>` +
+    `<div class="cart-summary"><div><small>${selectedCartIds.size} compra(s) seleccionada(s)</small>` +
+    `<strong>Total: ${money(total)}</strong></div><span>${cart.length} moto(s) en tu carrito</span></div>` +
+    `<div class="cart-actions"><button class="button button-light" onclick="showView('categories')">＋ Seguir explorando</button>` +
+    `<button class="button button-danger" type="button" onclick="cancelPurchase()">Cancelar compra</button>` +
+    `<button class="button button-primary" type="button" onclick="startCheckout()">Desea realizar la compra →</button></div>`;
+  host.querySelectorAll('[data-select]').forEach(input => {
+    input.addEventListener('change', () => {
+      input.checked
+        ? selectedCartIds.add(input.dataset.select)
+        : selectedCartIds.delete(input.dataset.select);
+      renderCart();
+    });
+  });
+  host.querySelectorAll('[data-remove]').forEach(button => {
+    button.addEventListener('click', () => {
+      cart = cart.filter(item => cartLineKey(item) !== button.dataset.remove);
+      saveCart();
+      renderCart();
+    });
+  });
+}
+
+function cancelPurchase() {
+  selectedCartIds.clear();
+  renderCart();
+  showToast('Proceso cancelado; tus motos siguen en Compras.');
+}
+
+function showCategories() {
+  showView('categories');
+}
+
+function startCheckout() {
+  checkoutIds = cart
+    .filter(item => selectedCartIds.has(cartLineKey(item)))
+    .map(cartLineKey);
+  if (!checkoutIds.length) {
+    showToast('Selecciona al menos una compra para continuar.');
+    return;
+  }
+  showView('checkout');
+}
+
+function updateDeliveryButton() {
+  const form = document.getElementById('delivery-form');
+  document.getElementById('save-delivery').disabled = !form.checkValidity();
+}
+
+function startPayment(event) {
+  event.preventDefault();
+  const form = document.getElementById('delivery-form');
+  if (!form.reportValidity()) return;
+  const customer = document.getElementById('full-name').value;
+  document.getElementById('card-holder').value = customer;
+  document.getElementById('card-name-preview').textContent =
+    customer.toLocaleUpperCase('es');
+  const total = cart
+    .filter(item => checkoutIds.includes(cartLineKey(item)))
+    .reduce((sum, item) =>
+      sum + PRODUCTS.find(product => product.id === item.id).price * item.quantity, 0
+    );
+  document.getElementById('payment-total').textContent =
+    `Total de la compra seleccionada: ${money(total)} MXN.`;
+  showView('payment');
+}
+
+function returnToCart() {
+  showView('cart');
+}
+
+function completePurchase() {
+  cart = cart.filter(item => !checkoutIds.includes(cartLineKey(item)));
+  saveCart();
+  checkoutIds = [];
+  selectedCartIds.clear();
+  showView('confirm');
+}
+
+function renderSupport() {
+  document.getElementById('support-grid').innerHTML = STORE.contacts.map(person =>
+    `<article class="support-card">` +
+    `<h2>${person.name}</h2><p><strong>${person.role}</strong></p>` +
+    `<p>📞 ${person.phone}</p><p>✉️ ${person.email}</p><p>📍 ${person.address}</p></article>`
+  ).join('');
+}
+
+updateCartCount();
+renderStoreInfo();
+renderCategories();
+renderSupport();
+if (window.location.hash === '#categorias') {
+  showView('categories');
+}
+document.getElementById('product-search').addEventListener('input', event => {
+  const products = PRODUCTS.filter(product =>
+    product.category === selectedCategory &&
+    product.name.toLocaleLowerCase('es').includes(event.target.value.trim().toLocaleLowerCase('es'))
+  );
+  document.getElementById('listing-count').textContent = `${products.length} motos`;
+  renderProducts(products);
+});
+document.getElementById('delivery-form').addEventListener('input', updateDeliveryButton);
+document.getElementById('delivery-form').addEventListener('submit', startPayment);
+document.getElementById('payment-form').addEventListener('submit', event => {
+  event.preventDefault();
+  if (!event.currentTarget.reportValidity()) return;
+  document.getElementById('payment-submit').hidden = true;
+  document.getElementById('payment-confirm-controls').hidden = false;
+});
+document.getElementById('card-holder').addEventListener('input', event => {
+  document.getElementById('card-name-preview').textContent =
+    event.target.value.toLocaleUpperCase('es') || 'NOMBRE DEL TITULAR';
+});
+document.getElementById('card-number').addEventListener('input', event => {
+  const digits = event.target.value.replace(/\D/g, '').slice(0, 16);
+  event.target.value = digits.replace(/(\d{4})(?=\d)/g, '$1 ');
+  document.getElementById('card-preview').textContent =
+    event.target.value || '•••• •••• •••• ••••';
+});
+document.getElementById('card-expiry').addEventListener('input', event => {
+  const digits = event.target.value.replace(/\D/g, '').slice(0, 4);
+  event.target.value = digits.length > 2
+    ? `${digits.slice(0, 2)}/${digits.slice(2)}`
+    : digits;
+});
+</script>
+</body>
+</html>

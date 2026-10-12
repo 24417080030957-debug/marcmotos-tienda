@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Confirmación de compra | Moto Pinzón</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="moto-catalogo.js"></script>
+    <script defer src="tienda.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🏍️</span>
+        <span>
+          <strong>MOTO PINZÓN</strong>
+          <small>Tu próxima ruta empieza aquí</small>
+        </span>
+      </a>
+      <nav>
+        <a class="top-link" href="index.html">⌂ Menú principal</a>
+        <a class="top-link" href="carrito.html">
+          🛒 Compras <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <section class="confirmation">
+        <div class="emoji">🎉</div>
+        <h1>¡COMPRA REALIZADA!</h1>
+        <p>
+          Tu pedido de demostración se registró correctamente. No se realizó
+          ningún cargo ni se enviaron tus datos.
+        </p>
+        <a class="button button-primary" href="index.html">
+          🏠 Volver al menú principal
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span data-year></span> Moto Pinzón</span>
+      <a href="index.html">Volver al menú principal</a>
+    </footer>
+
+    <script>
+      document.querySelectorAll('[data-year]').forEach(node => {
+        node.textContent = new Date().getFullYear();
+      });
+
+      document.querySelectorAll('[data-cart-count]').forEach(node => {
+        try {
+          node.textContent = JSON.parse(
+            localStorage.getItem('ruta-motor-cart-v3') || '[]'
+          ).reduce((sum, item) => sum + item.quantity, 0);
+        } catch {
+          node.textContent = '0';
+        }
+      });
+    </script>
+  </body>
+</html>

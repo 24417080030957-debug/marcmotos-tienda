@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrito de motos | Moto Pinzón</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="moto-catalogo.js"></script>
+    <script defer src="tienda.js"></script>
+  </head>
+  <body data-page="cart">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🏍️</span>
+        <span>
+          <strong>MOTO PINZÓN</strong>
+          <small>Tu próxima ruta empieza aquí</small>
+        </span>
+      </a>
+      <nav>
+        <a class="top-link" href="index.html">⌂ Menú principal</a>
+        <a class="top-link" href="carrito.html">
+          🛒 Compras <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <header class="page-heading">
+        <span class="eyebrow">Tus motos seleccionadas</span>
+        <h1>CARRITO DE COMPRAS</h1>
+        <p>Selecciona una o varias compras para continuar.</p>
+      </header>
+      <div id="cart-content"></div>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span data-year></span> Moto Pinzón</span>
+      <a href="index.html">Volver al menú principal</a>
+    </footer>
+  </body>
+</html>

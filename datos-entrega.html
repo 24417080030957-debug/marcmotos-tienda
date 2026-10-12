@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datos de entrega | Moto Pinzón</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="moto-catalogo.js"></script>
+    <script defer src="tienda.js"></script>
+  </head>
+  <body data-page="delivery">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🏍️</span>
+        <span>
+          <strong>MOTO PINZÓN</strong>
+          <small>Tu próxima ruta empieza aquí</small>
+        </span>
+      </a>
+      <nav>
+        <a class="top-link" href="index.html">⌂ Menú principal</a>
+        <a class="top-link" href="carrito.html">
+          🛒 Compras <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <header class="page-heading">
+        <span class="eyebrow">Paso 1 de 2</span>
+        <h1>DATOS DE ENTREGA</h1>
+        <p>Completa todos los campos para continuar con tu compra.</p>
+      </header>
+
+      <form class="form-panel" id="delivery-form">
+        <h2>¿A dónde lo enviamos?</h2>
+        <p>
+          Estos datos solo se usan en esta demostración y no se envían a
+          ningún servidor.
+        </p>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="country">País *</label>
+            <input
+              id="country"
+              name="country"
+              autocomplete="country-name"
+              required
+            >
+          </div>
+          <div class="field">
+            <label for="full-name">Nombre y apellidos *</label>
+            <input
+              id="full-name"
+              name="fullName"
+              autocomplete="name"
+              required
+            >
+          </div>
+          <div class="field">
+            <label for="postal">Código postal *</label>
+            <input
+              id="postal"
+              name="postal"
+              autocomplete="postal-code"
+              required
+            >
+          </div>
+          <div class="field">
+            <label for="state">Estado *</label>
+            <input
+              id="state"
+              name="state"
+              autocomplete="address-level1"
+              required
+            >
+          </div>
+          <div class="field">
+            <label for="municipality">Municipio *</label>
+            <input
+              id="municipality"
+              name="municipality"
+              autocomplete="address-level2"
+              required
+            >
+          </div>
+          <div class="field">
+            <label for="neighborhood">Colonia *</label>
+            <input id="neighborhood" name="neighborhood" required>
+          </div>
+          <div class="field">
+            <label for="street">Nombre de la calle *</label>
+            <input
+              id="street"
+              name="street"
+              autocomplete="street-address"
+              required
+            >
+          </div>
+          <div class="field">
+            <label for="street-number">Número de la calle *</label>
+            <input id="street-number" name="streetNumber" required>
+          </div>
+          <div class="field">
+            <label for="phone">Número de teléfono *</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              required
+            >
+          </div>
+          <div class="field">
+            <label for="email">Correo electrónico *</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <small>* Todos los campos son obligatorios.</small>
+          <button
+            class="button button-primary"
+            id="save-delivery"
+            type="submit"
+            disabled
+          >
+            Guardar y continuar →
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span data-year></span> Moto Pinzón</span>
+      <a href="carrito.html">Cancelar y volver al carrito</a>
+    </footer>
+  </body>
+</html>

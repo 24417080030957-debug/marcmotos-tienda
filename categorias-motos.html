@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Categorías de motos | Moto Pinzón</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="moto-catalogo.js"></script>
+    <script defer src="tienda.js"></script>
+  </head>
+  <body data-page="categories">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🏍️</span>
+        <span>
+          <strong>MOTO PINZÓN</strong>
+          <small>Tu próxima ruta empieza aquí</small>
+        </span>
+      </a>
+      <nav>
+        <a class="top-link" href="index.html">⌂ Menú principal</a>
+        <a class="top-link" href="carrito.html">
+          🛒 Compras <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="page-wrap">
+      <header class="page-heading">
+        <span class="eyebrow">Elige tu próxima ruta</span>
+        <h1>CATEGORÍAS DE MOTOS</h1>
+        <p>Elige un estilo y descubre las motos disponibles.</p>
+      </header>
+
+      <div class="category-layout">
+        <div class="category-list" id="category-list">
+          <button
+            class="category-option selected"
+            type="button"
+            data-category="Motos deportivas"
+            data-description="Diseño deportivo y potencia para disfrutar cada curva."
+            data-href="catalogo-motos.html?categoria=Motos%20deportivas"
+          >
+            <span>🏁 Motos deportivas</span><small>4 motos</small>
+          </button>
+          <button
+            class="category-option"
+            type="button"
+            data-category="Motos urbanas"
+            data-description="Prácticas y versátiles para moverte todos los días."
+            data-href="catalogo-motos.html?categoria=Motos%20urbanas"
+          >
+            <span>🏙️ Motos urbanas</span><small>3 motos</small>
+          </button>
+          <button
+            class="category-option"
+            type="button"
+            data-category="Motos cruiser"
+            data-description="Estilo clásico y comodidad para recorrer nuevos caminos."
+            data-href="catalogo-motos.html?categoria=Motos%20cruiser"
+          >
+            <span>🛣️ Motos cruiser</span><small>3 motos</small>
+          </button>
+        </div>
+        <article class="category-showcase">
+          <img id="category-cover" alt="Moto de la categoría seleccionada">
+          <span class="eyebrow">Encuentra tu próxima ruta</span>
+          <h2 id="category-feature-title">Elige tu categoría</h2>
+          <p id="category-feature-copy">Elige una categoría para ver las motos disponibles.</p>
+          <a
+            class="button button-primary"
+            id="category-open"
+            href="catalogo-motos.html?categoria=Motos%20deportivas"
+          >
+            Ver motos →
+          </a>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span data-year></span> Moto Pinzón · Precios de muestra</span>
+      <a href="index.html">Volver al menú principal</a>
+    </footer>
+  </body>
+</html>
