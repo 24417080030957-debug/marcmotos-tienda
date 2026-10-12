@@ -1132,7 +1132,7 @@ h1,h2,h3,p {
           <p class="hero-subtitle">
             Descubre motos deportivas, urbanas y cruiser listas para acompañarte en el camino.
           </p>
-          <div class="hero-actions">
+          <div class="store-link-panel">             <label class="store-link-label" for="store-link">Comparte nuestra tienda</label>             <div class="store-link-row">               <input class="store-link-input" id="store-link" type="url" value="https://24417080030957-debug.github.io/marcmotos-tienda/" readonly aria-label="Enlace público de MarcMotos" onclick="this.select()">               <button class="store-link-copy" type="button" onclick="copyStoreLink()">Copiar link</button>             </div>             <span class="store-link-status" id="store-link-status" aria-live="polite"></span>           </div>           <div class="hero-actions">
             <button class="button button-primary" onclick="showView('categories')">
                Explorar categorías
             </button>
@@ -1554,7 +1554,7 @@ function showToast(message) {
   }, 2600);
 }
 
-function showView(name) {
+async function copyStoreLink(){const input=document.getElementById("store-link");const status=document.getElementById("store-link-status");try{await navigator.clipboard.writeText(input.value);status.textContent="¡Link copiado! Ya puedes compartirlo.";}catch(error){input.select();if(document.execCommand("copy")){status.textContent="¡Link copiado! Ya puedes compartirlo.";}else{status.textContent="No se pudo copiar. Selecciona y copia el enlace manualmente.";console.error("No se pudo copiar el enlace de la tienda.",error);}}} function showView(name) {
   document.querySelectorAll('.view').forEach(view => {
     view.classList.toggle('active', view.id === `view-${name}`);
   });
